@@ -23,9 +23,9 @@ $ make
 
 ```
 $ cd socket.io-cpp-client-sample
-$ cd src
+$ cd web
 $ npm install
-$ node index.jx
+$ node index.js
 ```
 
 ### Run client
@@ -41,3 +41,12 @@ $ ./client http://localhost:8000/ <Your pc's ID.>
 Access to [http://localhost:8000/](http://localhost:8000/) and input browser's ID.
 Input command (like 'ls') and push button.
 The results on C++ client are displayed.
+
+### Enable SSL
+
+If you want to enable SSL on both server and client side, you can put `ENABLE_SSL` into cmake and node command line.
+
+```
+cmake -D ENABLE_SSL=1 -D SIO_DIR=<Socket.IO C++ Client dir> -D BOOST_ROOT=<Boost dir> ..
+ENABLE_SSL=1 node index.js
+```
